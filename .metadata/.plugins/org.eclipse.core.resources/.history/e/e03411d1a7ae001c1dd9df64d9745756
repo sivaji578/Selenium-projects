@@ -1,0 +1,377 @@
+package stepDefinition;
+
+import io.cucumber.java.en.Given;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+import static io.restassured.RestAssured.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import Resource.DoctorlistByHospitallDSet;
+import Resource.EditePageDetailsSet;
+import Resource.FindDoctorByNameSet;
+import Resource.PatientChangeLoginSet;
+import Resource.PatientChangePasswordSet;
+import Resource.PatientLoginSet;
+import Resource.PatientOtpVerificationSet;
+import Resource.PatientRegisterationSet;
+import Resource.PatientResetPasswordLinkSet;
+import Utility.CONSTANTS;
+
+public class PatientLogin {
+	public static RequestSpecification request;
+	public static Response response;
+	String msg;
+	public static String token;
+	public static String patientIdNumber;
+	//public static String address;
+	public static String passcod;
+	public static WebDriver driver;
+	public static String url;
+	
+
+	@Given("^I get request from the body \"([^\"]*)\",\"([^\"]*)\"$")
+	public void i_get_request_from_the_body(String phone, String password) {
+		RestAssured.baseURI = "https://dev.virujh.com";
+		request = given().header("Content-Type", "application/json").body(PatientLoginSet.PLogin(phone, password)).log()
+				.all();
+	}
+
+	@When("^It triggers api to \"([^\"]*)\"$")
+	public void it_triggers_api_to(String path) {
+		response = request.when().post(path);
+	}
+
+	@Then("^I verify the response$")
+	public void i_verify_the_response() {
+		String res = response.then().log().all().extract().response().asString();
+		JsonPath js = new JsonPath(res);
+		passcod = js.getString("passcode");
+		System.out.println(passcod);
+		String successmsg = "OTP is sent successfully";
+		msg = js.getString("message");
+		Assert.assertEquals(successmsg, msg);
+		System.out.println(msg);
+	}
+
+	@Given("I get request from the body {string}")
+	public void i_get_request_from_the_body(String phone) {
+		RestAssured.baseURI = "https://dev.virujh.com";
+		request = given().header("Content-Type", "application/json")
+				.body((PatientOtpVerificationSet.POVerificationSet(phone, passcod))).log().all();
+	}
+
+	@Then("^I verify the respons$")
+	public void i_verify_the_respons() {
+
+		String res = response.then().log().all().extract().response().asString();
+		JsonPath js = new JsonPath(res);
+		String msgg = js.getString("message");
+		System.out.println(msgg);
+	}
+
+	@Given("I get request from the body {string},{string},{string},{string},{string},{string},{string},{string},{string},{string},{string}")
+	public void i_get_request_from_the_body_male(String phone, String email, String password, String firstName,
+			String lastName, String dateOfBirth, String country, String address, String state, String pincode,
+			String gender) {
+		RestAssured.baseURI = "https://dev.virujh.com";
+		request = given()
+				.header("Content-Type", "application/json").body(PatientRegisterationSet.PRegisteration(phone, email,
+						password, firstName, lastName, dateOfBirth, country, address, state, pincode, gender))
+				.log().all();
+	}
+
+	@When("It triggers the api to {string}")
+	public void it_triggers_the_api_to(String newPath) {
+		response = request.when().post(newPath);
+	}
+
+	@Then("I verify the responsedata")
+	public void i_verify_the_responsedata() {
+		String resdata = response.then().log().all().extract().response().asString();
+		JsonPath js = new JsonPath(resdata);
+		String acestokenNumber = js.getString("patient.accessToken");
+		CONSTANTS.accessToken = js.getString("patient.accessToken");
+		System.out.println(acestokenNumber);
+		String patientid = js.getString("patient.patientId");
+		System.out.println(patientid);
+		String msg = js.getString("message");
+		System.out.print(msg);
+	}
+
+	@Given("I get request from the body for changing password {string},{string}")
+	public void i_get_request_from_the_body_for_changing_password(String phone, String password) {
+		RestAssured.baseURI = "https://dev.virujh.com";
+		request = given().header("Content-Type", "application/json")
+				.body(PatientChangeLoginSet.PCloginSet(phone, password)).log().all();
+	}
+
+	@When("I trigger api to {string}")
+	public void i_trigger_api_to(String npath) {
+		response = request.when().post(npath);
+	}
+
+	@Then("I verify the data and get the accessToken from response")
+	public void i_verify_the_data_and_get_the_access_token_from_response() {
+		String loginres = response.then().log().all().extract().response().asString();
+		JsonPath js = new JsonPath(loginres);
+		token = js.getString("accessToken");
+		CONSTANTS.accessToken = js.getString("accessToken");
+		System.out.println("it should be show in access token :" + token);
+	}
+
+	@Given("I get data request from the body {string},{string},{string}")
+	public void i_get_data_request_from_the_body(String oldPassword, String newPassword, String confirmNewPassword) {
+		RestAssured.baseURI = "https://dev.virujh.com";
+		request = given().auth().oauth2(CONSTANTS.accessToken).header("Content-Type", "application/json")
+				.body(PatientChangePasswordSet.PCPasswordSet(oldPassword, newPassword, confirmNewPassword)).log().all();
+	}
+
+	@Then("I verify the updated password response")
+	public void i_verify_the_updated_password_response() {
+		String changepassworddata = response.then().assertThat().log().all().statusCode(200).extract().response()
+				.asString();
+		JsonPath js = new JsonPath(changepassworddata);
+		String mssg = js.getString("message");
+		System.out.println(mssg);
+	}
+
+	@Given("I get data request from the body {string}")
+	public void i_get_data_request_from_the_body(String phone) {
+		RestAssured.baseURI = "https://dev.virujh.com";
+		request = given().header("Content-Type", "application/json")
+				.body(PatientResetPasswordLinkSet.PRPasswordSet(phone)).log().all();
+	}
+
+	@Then("I verify the reset password response")
+	public void i_verify_the_reset_password_response() {
+		String resetLink = response.then().log().all().extract().response().asString();
+		JsonPath js = new JsonPath(resetLink);
+		String emailId = js.getString("email");
+		System.out.println(emailId);
+		String textmsg = js.getString("message");
+		System.out.println(textmsg);
+	}
+
+	@Given("I get request from the query params {string},{string},{string},{string}")
+	public void i_get_request_from_the_query_params(String KEY, String VALUE, String KEY1, String VALUE1) {
+		RestAssured.baseURI = "https://dev.virujh.com";
+		request = given().queryParams(KEY, VALUE, KEY1, VALUE1).auth().oauth2(CONSTANTS.accessToken)
+				.header("Content-Type", "application/json").log().all();
+	}
+
+	@When("I get triggers the api to {string}")
+	public void i_get_triggers_the_api_to(String geturl) {
+		response = request.when().get(geturl);
+	}
+
+	@Then("I verify the PastAppointment data")
+	public void i_verify_the_past_appointment_data() {
+		String pastAppointmentdata = response.then().log().all().extract().response().asString();
+		JsonPath js = new JsonPath(pastAppointmentdata);
+		String appointmentsId = js.getString("appointmentId");
+		System.out.println(appointmentsId);
+		System.out.println("THIS IS PATIENT PAST APPOINTMENT LIST");
+	}
+
+	@Then("I verify the upcomingappointment list")
+	public void i_verify_the_upcomingappointment_list() {
+
+		String upcomingAppointment = response.then().log().all().extract().response().asString();
+		JsonPath js = new JsonPath(upcomingAppointment);
+		patientIdNumber = js.getString("appointments.appointmentId");
+		patientIdNumber = patientIdNumber.replaceAll("\\[|\\]", "");
+		// s=s.replaceAll("\\[|\\]", "");
+		System.out.println(patientIdNumber);
+		System.out.println("This is upcoming appointment list");
+		String doctKey = js.getString("appointments.doctorKey");
+		System.out.println(doctKey);
+	}
+    
+	@Given("I get request from the query params to upcoming appointment list {string},{string},{string}")
+		public void i_get_request_from_the_query_params_to_upcoming_appointment_list(String Key, String Value,
+			String Key1) {
+		System.out.println("this is testing upcoming");
+		
+		for(int i=0;i<=3;i++)
+		{
+
+		RestAssured.baseURI = "https://dev.virujh.com";
+		request = given().queryParams(Key, Value, Key1, patientIdNumber).auth().oauth2(CONSTANTS.accessToken).log()
+				.all();
+		System.out.println(CONSTANTS.accessToken);
+
+	}
+	}
+
+	@When("I get url from the api to {string}")
+	public void i_get_url_from_the_api_to(String getdataurl) {
+		response = request.when().get(getdataurl);
+	}
+
+	@Then("I verify the response of the appointment list")
+	public void i_verify_the_response_of_the_appointment_list() {
+		String appointmentDoctorDetails = response.then().log().all().extract().response().asString();
+		JsonPath js = new JsonPath(appointmentDoctorDetails);
+		String hospname = js.getString("hospitalName");
+		String data = "hospitalName";
+		Assert.assertEquals(hospname, data);
+		String firstName = js.getString("patientFirstName");
+		System.out.println(firstName);
+		System.out.println("This is Doctor appointment list based on upcoming");
+
+	}
+
+	@Given("I get request from the accesstokes data")
+	public void i_get_request_from_the_accesstokes_data() {
+		RestAssured.baseURI = "https://dev.virujh.com";
+		System.out.println("access token testing:" + CONSTANTS.accessToken);
+		request = given().auth().oauth2(CONSTANTS.accessToken).headers("Authorization", token).log().all();
+		System.out.println("Token data" + token);
+		System.out.println("here we are checking hospital data");
+	}
+
+	@Then("I verify the doctor response")
+	public void i_verify_the_doctor_response() {
+		String doctorResponse = response.then().log().all().extract().response().asString();
+		JsonPath js = new JsonPath(doctorResponse);
+		String docterID = js.getString("doctorId");
+		System.out.println(docterID);
+		String doctorkeyno = js.getString("doctorKey");
+		System.out.println(doctorkeyno);
+	}
+
+@Given("I get data from the body {string}")
+public void i_get_data_from_the_body(String codeOrName) {
+   request=given().auth().oauth2(CONSTANTS.accessToken).body(FindDoctorByNameSet.FDByNameSet(codeOrName)).log().all();
+}
+
+@When("I triggers api to {string}")
+public void i_triggers_api_to(String getbaseurl) {
+   response=request.when().get(getbaseurl);
+}
+
+@Then("I verify the findDoctorByCodeOrName response")
+public void i_verify_the_find_doctor_by_code_or_name_response() throws InterruptedException {
+    String findDoctorName=response.then().log().all().extract().response().asString();
+    JsonPath js=new JsonPath(findDoctorName);
+    String doctorid=js.getString("doctors.doctorId");
+    System.out.println(doctorid);
+    String accountkey=js.getString("doctors.accountkey");
+    System.out.println(accountkey);
+}
+
+@Then("I verify the response of DoctorlistByHospital")
+public void i_verify_the_response_of_doctorlist_by_hospital() {
+	String doctorListHospital=response.then().log().all().extract().response().asString();
+	JsonPath js=new JsonPath(doctorListHospital);
+	String pin=js.getString("pinCode");
+	System.out.println(pin);
+}
+By DoctorOption= By.xpath("(//span[@class='MuiButton-label'])[2]");
+By EmailId     = By.xpath("//input[@placeholder='Email ID *']");
+By Passwod    = By.xpath("//input[@placeholder='Password']");
+By Signin      = By.xpath("//span[text()='Sign In']");
+By Setting     = By.xpath("//i[@class='icon-settings ']");
+By HospitalUrl = By.xpath("//input[@class='MuiInputBase-input MuiOutlinedInput-input Mui-disabled Mui-disabled MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd']");
+By HeadingText = By.xpath("//h5[@class='MuiTypography-root jss4 MuiTypography-h5']");
+@Given("I get data from the user {string},{string}")
+public void i_get_data_from_the_user(String EmailID, String Password) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver","C:\\Users\\softsuave\\Downloads\\chromedriver_win32 (7)\\chromedriver.exe");
+	driver=new ChromeDriver();
+	driver.get("https://dev.virujh.com/app");
+	WebElement doctOption=driver.findElement(DoctorOption);
+	doctOption.click();
+	WebElement Email     = driver.findElement(EmailId);
+	Email.sendKeys(EmailID);
+	WebElement pwd       = driver.findElement(Passwod);
+	pwd.sendKeys(Password);
+	WebElement signinbtn = driver.findElement(Signin);
+	signinbtn.click();
+	//driver.wait(4000);
+}
+
+@When("I entered all text fields data here")
+public void i_entered_all_text_fields_data_here() throws InterruptedException {
+	
+	WebElement settingbtn= driver.findElement(Setting);
+	settingbtn.click();
+	driver.wait(8000);
+	WebElement hospUrl   = driver.findElement(HospitalUrl);
+	url=hospUrl.getText();
+	System.out.println(url);
+}
+
+@Then("Verify the output wheather we are getting the token or not")
+public void verify_the_output_wheather_we_are_getting_the_token_or_not() {
+	 driver.get(url);
+		boolean s=driver.findElement(HeadingText).isDisplayed();
+		if(s==true)
+		{
+			System.out.println("Heading is Displayes We are redirecting the correct Page");
+		}
+		else
+		{
+			System.out.println("Heading is not there You can re-check the code");
+		}
+		String urltext = driver.getCurrentUrl();
+		System.out.println(urltext);
+		String urldata=urltext.split("app")[1];
+		System.out.println(urldata);
+}
+@Given("I get request the data from  body {string},{string},{string},{string}")
+public void i_get_request_the_data_from_body(String key, String value,String key1,String value1) {
+RestAssured.baseURI="https://dev.virujh.com";
+request=given().queryParams(key,value,key1,value1).log().all();
+}
+@Then("I verify the response of DoctorlistByHospitalId")
+public void i_verify_the_response_of_doctorlist_by_hospital_id() {
+    String doctorlistByHospitalId=response.then().log().all().extract().response().asString();
+    JsonPath js=new JsonPath(doctorlistByHospitalId);
+    String doctord=js.getString("doctorId");
+    System.out.println(doctord);
+    String acountkey=js.getString("accountkey");
+    System.out.println(acountkey);
+    String doctorkeys=js.getString("doctorKey");
+    System.out.println(doctorkeys);
+}
+@Given("I get request from the body for edite patient details {string},{string},{string},{string},{string},{string},{string},{string},{string},{string},{string},{string}")
+public void i_get_request_from_the_body_for_edite_patient_details(String PatientId,String address) {
+  request=given().auth().oauth2(CONSTANTS.accessToken).body(EditePageDetailsSet.EPDetailsSet(PatientId,address)).log().all();
+}
+@Then("I verify the response of the body")
+public void i_verify_the_response_of_the_body() {
+	String edite=response.then().log().all().extract().response().asString();
+	JsonPath js=new JsonPath(edite);
+	String msg=js.getString("message");
+	System.out.println(msg);
+}
+@Given("I gets data from the body {string}")
+public void i_gets_data_from_the_body(String codeOrName) {
+	RestAssured.baseURI="https://dev.virujh.com";
+	request=given().auth().oauth2(CONSTANTS.accessToken).body(FindDoctorByNameSet.FDByNameSet(codeOrName)).log().all();
+    }
+@Then("I verify the response of findDoctorByCodeOrName")
+public void i_verify_the_response_of_find_doctor_by_code_or_name() {
+    String findDoctorName=response.then().log().all().extract().response().asString();
+    JsonPath js=new JsonPath(findDoctorName);
+    String doctordata=js.getString("doctorId");
+    System.out.println(doctordata);
+    System.out.println("This is findDoctorByCodeOrNameTesting");
+}
+
+}
+
+
+

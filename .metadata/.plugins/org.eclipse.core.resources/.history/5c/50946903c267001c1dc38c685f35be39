@@ -1,0 +1,19 @@
+package RestPackage.RestProject;
+
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+
+import org.testng.annotations.Test;
+
+@Test
+public class FirstClass {
+	public static void firstMethod()
+	{
+		//String data=RestAssured.baseURI="http://demo.guru99.com/V4/sinkministatement.php?";
+		given().when().get("http://demo.guru99.com/V4/sinkministatement.php? CUSTOMER_ID=68195&PASSWORD=1234!&Account_No=1")
+		.then().log().all();
+		System.out.println("this is working");
+	}
+
+}

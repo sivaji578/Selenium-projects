@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookBucketRunner" project="NH5UpworkProject" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="testRunner.BookBucketRunner" time="19.128">
+    <testsuite name="Our properties page, other properties nearby widget and Properties calendar functionalities" time="19.128">
+      <testcase name="Verify Our property page and navigate through property calendar section on property details page to add the room to the booking widget" classname="Our properties page, other properties nearby widget and Properties calendar functionalities" time="19.128">
+        <failure>junit.framework.AssertionFailedError: expected:&lt;4&gt; but was:&lt;3&gt;&#13;
+	at junit.framework.Assert.fail(Assert.java:57)&#13;
+	at junit.framework.Assert.failNotEquals(Assert.java:329)&#13;
+	at junit.framework.Assert.assertEquals(Assert.java:78)&#13;
+	at junit.framework.Assert.assertEquals(Assert.java:234)&#13;
+	at junit.framework.Assert.assertEquals(Assert.java:241)&#13;
+	at BasicData.BookBucket.OtherPropertyImageCount(BookBucket.java:97)&#13;
+	at stepDefinition.BookBucketService.user_scrolls_down_and_ensure_that_something_widget_displays_with_up_to_4_properties_and_the_view_more_link(BookBucketService.java:54)&#13;
+	at ✽.User scrolls down and ensure that "Other property nearby" widget displays with up to 4 properties and the VIEW MORE link(file:///D:/WorksiteLabsAllProjects/WorkSiteLabs/NH5UpworkProject/src/test/java/features/BookBucket.feature:14)&#13;
+&#13;
+</failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

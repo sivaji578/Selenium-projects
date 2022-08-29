@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookBucketRunner" project="NH5UpworkProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="testRunner.BookBucketRunner" time="17.27">
+    <testsuite name="Our properties page, other properties nearby widget and Properties calendar functionalities" time="17.27">
+      <testcase name="Verify Our property page and navigate through property calendar section on property details page to add the room to the booking widget" classname="Our properties page, other properties nearby widget and Properties calendar functionalities" time="17.27">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'user clicks on Our properties link displaying in the top of home page' and 7 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@When("user clicks on Our properties link displaying in the top of home page")
+public void user_clicks_on_our_properties_link_displaying_in_the_top_of_home_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("user enters �Blaydon primary care centre� in the location field of PROPERTY SEARCH Widget")
+public void user_enters_blaydon_primary_care_centre_in_the_location_field_of_property_search_widget() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("user clicks on search button")
+public void user_clicks_on_search_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("ensures that subtitle of the page updated correctly")
+public void ensures_that_subtitle_of_the_page_updated_correctly() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("user turns the map view toggle off")
+public void user_turns_the_map_view_toggle_off() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("ensures that List view displays with expected property and the subtitle")
+public void ensures_that_list_view_displays_with_expected_property_and_the_subtitle() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User scrolls down and ensure that �Other property nearby� widget displays with up to {int} properties and the VIEW MORE link")
+public void user_scrolls_down_and_ensure_that_other_property_nearby_widget_displays_with_up_to_properties_and_the_view_more_link(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("user clicks on one of the property images in �other property nearby� widget")
+public void user_clicks_on_one_of_the_property_images_in_other_property_nearby_widget() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

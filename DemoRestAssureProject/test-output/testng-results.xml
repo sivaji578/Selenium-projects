@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2210" started-at="2022-02-01T18:19:45 IST" finished-at="2022-02-01T18:19:47 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2210" started-at="2022-02-01T18:19:45 IST" finished-at="2022-02-01T18:19:47 IST">
+      <class name="DynamicPostClass">
+        <test-method status="PASS" signature="addBook(java.lang.String,java.lang.String)[pri:0, instance:DynamicPostClass@1d29cf23]" name="addBook" duration-ms="1655" started-at="2022-02-01T18:19:45 IST" data-provider="BookData" finished-at="2022-02-01T18:19:46 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[amknd]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[6543]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addBook -->
+        <test-method status="PASS" signature="addBook(java.lang.String,java.lang.String)[pri:0, instance:DynamicPostClass@1d29cf23]" name="addBook" duration-ms="254" started-at="2022-02-01T18:19:46 IST" data-provider="BookData" finished-at="2022-02-01T18:19:47 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[knkls]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[5467]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addBook -->
+        <test-method status="PASS" signature="addBook(java.lang.String,java.lang.String)[pri:0, instance:DynamicPostClass@1d29cf23]" name="addBook" duration-ms="251" started-at="2022-02-01T18:19:47 IST" data-provider="BookData" finished-at="2022-02-01T18:19:47 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[skfss]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4564]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addBook -->
+      </class> <!-- DynamicPostClass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

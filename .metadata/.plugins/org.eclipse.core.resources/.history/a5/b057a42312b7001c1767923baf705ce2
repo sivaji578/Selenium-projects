@@ -1,0 +1,96 @@
+package com.profile.tests;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import com.profile.base.Base;
+import com.profile.pages.ExcelGetData;
+import com.profile.pages.RegisterPage;
+
+	//@Test(dataProvider="Required_Data")
+	//@Test
+public class RegisterPageTest extends RegisterPage{
+//		public void reg() throws InterruptedException
+//		{
+//			Base b=new Base();
+//					b.OpenApplication();
+//		registerbutton();
+//		}
+//	   String data_final_value[][];
+		@Test(dataProvider="Required_Data")
+   public void registerdata(String FirstName,String LastName,String PhoneNumber,String MobileNumber,String Email,String ConfirmEmail,String Password,String ConfirmPassword) throws InterruptedException
+	    //public void register(String registerBtn,String byEmail,String byTelephone)
+		{
+	    Base b=new Base();
+	    OpenApplication();
+		registerbutton(FirstName,LastName,PhoneNumber,MobileNumber,Email,ConfirmEmail,Password,ConfirmPassword);
+		
+		}
+		public void clickActions(String registerBtn)
+		{
+			elementClicker(registerBtn);
+		}
+		
+		
+		//RegisterPage r=new RegisterPage();
+    	//r.elementClicker("registerBtn");
+    	//elementClicker("ByEmail");
+		/*elementType("Sivaji",FirstName);
+		elementType("PanIndia",LastName);
+		elementType("9133323233",PhoneNumber);
+		elementType("9133323233",MobileNumber);
+		elementType("John@gmail.com",Email);
+		elementType("John@gmail.com",ConfirmEmail);
+//		elementType(Password);*/
+//		elementType(ConfirmPassword);
+		}
+//		elementClicker(byEmail);
+//		elementClicker(byTelephone);
+//    	RegisterPage rp=new RegisterPage();
+//		rp.elementClicker(registerBtn);
+//		rp.elementType("firstname"," Shivaji");
+//		rp.elementType("lastname");
+//		rp.elementType("9133661493");
+//		rp.elementType("9133661493");
+//		rp.elementType("john@gmail.com");
+//		rp.elementType("john@gmail.com");
+//		rp.elementType("Ss#123");
+//		rp.elementType("Ss#123");
+//		rp.elementClicker(byEmail);
+//		rp.elementClicker(byTelephone);
+//	}*/
+//		@DataProvider(name="Required_Data")
+//		public String[][] loginDataProvider() throws IOException 
+//		{ 
+//           ExcelGetData d=new ExcelGetData();
+//           data_final_value=d.getDataFromSheet();
+//			
+//			return data_final_value;
+//		}
+		
+		@DataProvider(name="Required_Data")
+		public String[][] loginDataProvider() throws IOException 
+		{ 
+//			string[][] sad=[[]];
+			ExcelGetData d=new ExcelGetData();
+			String data_final_value[][]=d.getDataFromSheet();
+			System.out.println("test"+data_final_value);
+			ArrayList<String> al = new ArrayList<String>();
+			for(int i=1;i<data_final_value.length;i++)
+			{
+				for(int j=0;j<data_final_value[i].length;j++)
+				{
+					System.out.println("Sivaji"+i + " " + j +" " +data_final_value[i][j]);
+					al.add(data_final_value[i][j]);
+				}
+			}
+			return data_final_value;
+			//String[]str={data_final_value};
+			//System.out.println(str);
+			//String arr[]=new String[val];//declaration and instantiation    
+
+		}
+}

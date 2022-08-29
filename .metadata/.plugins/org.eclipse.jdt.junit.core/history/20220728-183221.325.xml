@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ManageServiceRunner" project="NH5UpworkProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="testRunner.ManageServiceRunner" time="0.05">
+    <testsuite name="Manage services" time="0.05">
+      <testcase name="Verify Add New Services &amp; delete service" classname="Manage services" time="0.05">
+        <error>io.cucumber.core.runner.DuplicateStepDefinitionException: Duplicate step definitions in stepDefinition.ManageService.i_type_something_in_the_field_on_the_services_widget(java.lang.String,java.lang.String) and stepDefinition.ManageService.i_type_the_services_widget_element(java.lang.String,java.lang.String)&#13;
+	at io.cucumber.core.runner.CachingGlue.lambda$prepareGlue$3(CachingGlue.java:277)&#13;
+	at java.util.ArrayList.forEach(Unknown Source)&#13;
+	at io.cucumber.core.runner.CachingGlue.prepareGlue(CachingGlue.java:271)&#13;
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:72)&#13;
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)&#13;
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$3(CucumberExecutionContext.java:151)&#13;
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)&#13;
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:151)&#13;
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)&#13;
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)&#13;
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)&#13;
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)&#13;
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)&#13;
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)&#13;
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)&#13;
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)&#13;
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)&#13;
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)&#13;
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)&#13;
+	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)&#13;
+	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)&#13;
+	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)&#13;
+	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)&#13;
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:93)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:529)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:756)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

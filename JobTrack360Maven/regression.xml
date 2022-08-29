@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regresion suite">
+  <test thread-count="5" name="RegressionTest">
+    <classes>
+      <class name="TestData.JobTrack360Maven.EmailTest"/>
+      <class name="TestData.JobTrack360Maven.compingClassTest"/>
+      <class name="TestData.JobTrack360Maven.BasicTest"/>
+      <class name="TestData.JobTrack360Maven.CreateNewProposalTest"/>
+      <class name="TestData.JobTrack360Maven.AppTest"/>
+    </classes>
+  </test> <!-- RegressionTest -->
+</suite> <!-- Regresion suite -->

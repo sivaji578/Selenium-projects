@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="38721" started-at="2021-12-21T21:46:02 IST" finished-at="2021-12-21T21:46:40 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="38721" started-at="2021-12-21T21:46:02 IST" finished-at="2021-12-21T21:46:40 IST">
+      <class name="com.org.ss.softsuave.LoginClassTest">
+        <test-method status="PASS" signature="launch()[pri:0, instance:com.org.ss.softsuave.LoginClassTest@11758f2a]" name="launch" is-config="true" duration-ms="33135" started-at="2021-12-21T21:46:02 IST" finished-at="2021-12-21T21:46:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launch -->
+        <test-method status="PASS" signature="login()[pri:1, instance:com.org.ss.softsuave.LoginClassTest@11758f2a]" name="login" duration-ms="5297" started-at="2021-12-21T21:46:35 IST" finished-at="2021-12-21T21:46:40 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="patientlogin()[pri:2, instance:com.org.ss.softsuave.LoginClassTest@11758f2a]" name="patientlogin" duration-ms="264" started-at="2021-12-21T21:46:40 IST" finished-at="2021-12-21T21:46:40 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- patientlogin -->
+      </class> <!-- com.org.ss.softsuave.LoginClassTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,37 @@
+package com.org.ss.softsuave;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+public class LoginClass {
+	
+	public static WebElement LoginButton(WebDriver driver)
+	{
+		return driver.findElement(By.xpath("//button[text()='Login']"));
+	}
+	public static WebElement userName(WebDriver driver)
+	{
+		return driver.findElement(By.xpath("//input[@placeholder='Email ID *']"));
+	}
+	public static WebElement password(WebDriver driver)
+	{
+		return driver.findElement(By.xpath("//input[@id='password']"));
+	}
+	public static WebElement loginbtn(WebDriver driver)
+	{
+		return driver.findElement(By.xpath("//span[text()='Sign In']"));
+	}
+	
+	public static WebElement validationError(WebDriver driver)
+	{
+		WebElement data= driver.findElement(By.xpath("//h6[@class='MuiTypography-root jss17 MuiTypography-h6']"));
+		String actualData=data.getText();
+		System.out.println(actualData);
+		String exactData="Invalid Credentails";
+		Assert.assertEquals(actualData, exactData);
+		return data;
+		
+	}
+}

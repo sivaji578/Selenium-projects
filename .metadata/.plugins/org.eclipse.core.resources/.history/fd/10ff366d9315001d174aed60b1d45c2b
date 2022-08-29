@@ -1,0 +1,57 @@
+package BasicData;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+
+import junit.framework.Assert;
+
+public class BookBucket extends Base{
+	By ourPropertie = By.xpath("//li[@class='header__nav-item properties']//a[text()='Our Properties']");
+	By validateOurProperty = By.xpath("//h3[text()='Our Properties']");
+	By propertySearch  = By.xpath("(//div[@class='location__inner']//input[@name='location'])[3]");
+	By searchBtn    = By.xpath("//div[@class='form--actions']//button[@class='button button--secondary']");
+	By toggleButton = By.xpath("//button[@class='switch__button']");
+	By subTitleText = By.xpath("//h2[@class='search-map__venue-name']//a[text()='Blaydon primary care centre']");
+	public void ourProperties()
+	{
+		WebElement oproperties = driver.findElement(ourPropertie);
+		oproperties.click();
+	}
+	@SuppressWarnings("deprecation")
+	public void validateOurPropertyText()
+	{
+		WebElement vProperties= driver.findElement(validateOurProperty);
+		String voProperties = vProperties.getText();
+		String expectedResult ="Our Properties";
+		Assert.assertEquals(expectedResult, voProperties);
+	}
+	public void propertySearchField()
+	{
+		WebElement psField = driver.findElement(propertySearch);
+		psField.sendKeys("Blaydon primary care centre");
+		
+	}
+	public void searchButton()
+	{
+		WebElement sButton = driver.findElement(searchBtn);
+		sButton.click();
+	}
+	public void toggleButtonn()
+	{
+		WebElement tButton = driver.findElement(toggleButton);
+		Actions a=new Actions(driver);
+		a.moveToElement(tButton).click().build().perform();
+	}
+	public void PropertySubTitleText()
+	{
+		WebElement stText = driver.findElement(subTitleText);
+		String sText = stText.getText();
+		String text="Blaydon primary care centre";
+		Assert.assertEquals(sText, text);
+	}
+	
+	
+
+}

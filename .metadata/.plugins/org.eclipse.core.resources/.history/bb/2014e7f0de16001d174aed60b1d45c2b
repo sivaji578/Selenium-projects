@@ -1,0 +1,16 @@
+ Feature:  Our properties page, other properties nearby widget and Properties calendar functionalities 
+
+Scenario: Verify Our property page and navigate through property calendar section on property details page to add the room to the booking widget 
+ 
+ Given that the user is logged in
+ When user clicks on Our properties link displaying in the top of home page 
+ Then user navigates to the Our properties default map view screen
+ Then user enters "Blaydon primary care centre" in the location field of PROPERTY SEARCH Widget
+ And user clicks on search button 
+ And ensures that subtitle of the page updated correctly 
+ Then user turns the map view toggle off
+  And ensures that List view displays with expected property and the subtitle 
+  Then user clicks the property name link on the property card in the list view
+  Then User scrolls down and ensure that “Other property nearby” widget displays with up to 4 properties and the VIEW MORE link 
+   Then user clicks on one of the property images in “other property nearby” widget
+    And ensure that user navigates to that property details screen 

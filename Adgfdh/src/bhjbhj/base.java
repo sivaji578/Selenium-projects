@@ -1,0 +1,33 @@
+package bhjbhj;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class base {
+	public WebDriver driver;
+	
+	
+		
+	
+		
+		public void launchingBrowser()
+		{
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\softsuave\\Downloads\\chromedriver_win32\\chromedriver.exe");
+			driver=new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("https://worksite-labs---dev.web.app");
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		}
+		
+		public void waitForElement(By locator) 
+		{
+		WebDriverWait wait = new WebDriverWait(driver, 99);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	    }
+
+}

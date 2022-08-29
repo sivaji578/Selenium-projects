@@ -1,0 +1,83 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 2,
+        "name": "What scenario we going to test",
+        "description": "",
+        "id": "search-one-movie;what-scenario-we-going-to-test",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 16530427600,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "User entering the youtube",
+            "match": {
+              "location": "Stepdefinition.user_entering_the_youtube()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 351789800,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Enter the movie name as Simhadri",
+            "match": {
+              "location": "Stepdefinition.enter_the_movie_name_as_Simhadri()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 120589200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User click on search button",
+            "match": {
+              "location": "Stepdefinition.user_click_on_search_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1353160600,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Click on any one video",
+            "match": {
+              "location": "Stepdefinition.click_on_any_one_video()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 24100,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Able to see movie",
+            "match": {
+              "location": "Stepdefinition.able_to_see_movie()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Search one movie",
+    "description": "",
+    "id": "search-one-movie",
+    "keyword": "Feature",
+    "uri": "src/test/resources/Feature/cucumber.feature",
+    "tags": []
+  }
+]

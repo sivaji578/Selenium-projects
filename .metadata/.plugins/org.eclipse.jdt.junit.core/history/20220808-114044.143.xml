@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookBucketRunner" project="NH5UpworkProject" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="testRunner.BookBucketRunner" time="15.144">
+    <testsuite name="Our properties page, other properties nearby widget and Properties calendar functionalities" time="15.144">
+      <testcase name="Verify Our property page and navigate through property calendar section on property details page to add the room to the booking widget" classname="Our properties page, other properties nearby widget and Properties calendar functionalities" time="15.144">
+        <failure>
+          <expected>ourProperties</expected>
+          <actual>Our Properties</actual>
+          junit.framework.ComparisonFailure: expected:&lt;[our]Properties&gt; but was:&lt;[Our ]Properties&gt;&#13;
+	at junit.framework.Assert.assertEquals(Assert.java:100)&#13;
+	at junit.framework.Assert.assertEquals(Assert.java:107)&#13;
+	at BasicData.BookBucket.ourPropertyText(BookBucket.java:58)&#13;
+	at stepDefinition.BookBucketService.ensures_that_subtitle_of_the_page_updated_correctly(BookBucketService.java:37)&#13;
+	at ✽.ensures that subtitle of the page updated correctly(file:///D:/WorksiteLabsAllProjects/WorkSiteLabs/NH5UpworkProject/src/test/java/features/BookBucket.feature:10)&#13;
+&#13;
+
+        </failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

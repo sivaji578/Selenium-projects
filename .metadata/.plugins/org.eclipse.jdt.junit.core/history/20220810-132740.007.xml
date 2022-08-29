@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="PatientLoginRunner (2)" project="NH5UpworkProject" tests="3" started="3" failures="1" errors="1" ignored="0">
+  <testsuite name="testRunner.PatientLoginRunner" time="224.935">
+    <testsuite name="Our properties page, other properties nearby widget and Properties calendar functionalities" time="55.986">
+      <testcase name="Verify Our property page and navigate through property calendar section on property details page to add the room to the booking widget" classname="Our properties page, other properties nearby widget and Properties calendar functionalities" time="55.986">
+        <failure>junit.framework.AssertionFailedError: expected:&lt;3&gt; but was:&lt;4&gt;&#13;
+	at junit.framework.Assert.fail(Assert.java:57)&#13;
+	at junit.framework.Assert.failNotEquals(Assert.java:329)&#13;
+	at junit.framework.Assert.assertEquals(Assert.java:78)&#13;
+	at junit.framework.Assert.assertEquals(Assert.java:234)&#13;
+	at junit.framework.Assert.assertEquals(Assert.java:241)&#13;
+	at BasicData.BookBucket.OtherPropertyImageCount(BookBucket.java:99)&#13;
+	at stepDefinition.BookBucketService.user_scrolls_down_and_ensure_that_something_widget_displays_with_up_to_4_properties_and_the_view_more_link(BookBucketService.java:54)&#13;
+	at ✽.User scrolls down and ensure that "Other property nearby" widget displays with up to 4 properties and the VIEW MORE link(file:///D:/WorksiteLabsAllProjects/WorkSiteLabs/NH5UpworkProject/src/test/java/features/BookBucket.feature:14)&#13;
+&#13;
+</failure>
+      </testcase>
+    </testsuite>
+    <testsuite name="Manage services" time="89.856">
+      <testcase name="Verify Add New Services &amp; delete service" classname="Manage services" time="89.856"/>
+    </testsuite>
+    <testsuite name="Login functionality writting for NH5 Project" time="79.091">
+      <testcase name="Checking the normal login flow" classname="Login functionality writting for NH5 Project" time="79.091">
+        <error>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input data-testid="dateInput" data-cy="bookingWidgetDatePickerInput" placeholder="Select date" readonly="" type="text" name="date" value="10th August 2022"&gt; is not clickable at point (1211, 3). Other element would receive the click: &lt;div class="header header--sticky"&gt;...&lt;/div&gt;
+  (Session info: chrome=103.0.5060.134)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-5P3NRET', ip: '192.168.5.8', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.134, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\SOFTSU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62737}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: bd33c4f00c264aab9cca7a8f436257b9&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)&#13;
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)&#13;
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)&#13;
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)&#13;
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)&#13;
+	at BasicData.RegressionFlow.selectDate(RegressionFlow.java:77)&#13;
+	at stepDefinition.PatientLogin.i_select_a_day_something_of_something_from_the_datepicker_on_the_quickbook_widget(PatientLogin.java:147)&#13;
+	at ✽.I select a day "10" of "next month" from the datepicker on the quickbook widget(file:///D:/WorksiteLabsAllProjects/WorkSiteLabs/NH5UpworkProject/src/test/java/features/PatientLogin.feature:32)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

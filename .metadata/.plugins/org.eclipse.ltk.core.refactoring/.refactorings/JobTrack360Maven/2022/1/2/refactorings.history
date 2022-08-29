@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;TestData.JobTrack360Maven.ValidationClass&apos; to &apos;ValidationClassTest&apos;&#x0D;&#x0A;- Original project: &apos;JobTrack360Maven&apos;&#x0D;&#x0A;- Original element: &apos;TestData.JobTrack360Maven.ValidationClass&apos;&#x0D;&#x0A;- Renamed element: &apos;TestData.JobTrack360Maven.ValidationClassTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ValidationClass&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java&lt;TestData.JobTrack360Maven{ValidationClass.java[ValidationClass" matchStrategy="1" name="ValidationClassTest" qualified="false" references="true" similarDeclarations="false" stamp="1641215237937" textual="false" version="1.0"/>
+</session>

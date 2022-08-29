@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="PatientLoginRunner (2)" project="NH5UpworkProject" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="testRunner.PatientLoginRunner" time="94.325">
+    <testsuite name="Login functionality writting for NH5 Project" time="94.325">
+      <testcase name="Checking the normal login flow" classname="Login functionality writting for NH5 Project" time="94.325"/>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,55 @@
+package stepDefinition;
+
+import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
+
+import Resource.CommonUtilsClass;
+import Resource.LoginSetData;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import io.restassured.RestAssured;
+import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+//import payload.LoginRequest;
+import io.restassured.specification.ResponseSpecification;
+
+
+public class LoginClass extends CommonUtilsClass{
+	private RequestSpecification request;
+	private Response res;
+	private ResponseSpecification ressponse;
+	JsonPath js;
+	   @Given("^I get request from the body \"([^\"]*)\",\"([^\"]*)\"and \"([^\"]*)\"$")
+	    public void i_get_request_from_the_body_somethingsomethingand_something(String phoneNumber, String countryCode, String password) throws Throwable {
+	     request=given().spec(requestSpecificationMethods()).
+	                body(LoginSetData.loginSetData(phoneNumber,countryCode,password)).
+	                log().all();
+	    
+	    }
+	  @Given("^I get request from the body for request otp \"([^\"]*)\",\"([^\"]*)\"and\"([^\"]*)\"$")
+	    public void i_get_request_from_the_body_for_request_otp_somethingsomethingandsomething(String phoneNumber,String countryCode, String hashkey) throws Throwable {
+	       request=given().spec(requestSpecificationMethods()).body(LoginSetData.loginRequestOtp(phoneNumber,countryCode,hashkey)).
+	    		   log().all();
+	    }
+	  @Given("^I get request from body for verify otp  \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
+	    public void i_get_request_from_body_for_verify_otp_somethingsomethingsomethingsomething(String phonenumber, String countrycode, String hash, String otp, String strArg1, String strArg2, String strArg3, String strArg4) throws Throwable {
+	        request=given().spec(requestSpecificationMethods()).body(LoginSetData.verifyOtp(phonenumber, countrycode, hash, otp)).log().all();
+	    }
+        @When("^I triggers API \"([^\"]*)\"$")
+	    public void i_triggers_api_something(String path) throws Throwable {
+	        res=request.when().post(path);
+	    }
+         @Then("^I verify the response$")
+	    public void i_verify_the_response() throws Throwable {
+        	 ressponse=new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+        	 assertEquals(res.getStatusCode(), 200);
+        	 String accessTokenName=js.getString("accessToken");
+        	 System.out.println(accessTokenName.toString());
+        }
+
+
+}

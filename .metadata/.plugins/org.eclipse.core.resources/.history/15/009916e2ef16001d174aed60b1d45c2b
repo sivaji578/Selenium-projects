@@ -1,0 +1,123 @@
+package BasicData;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+
+import junit.framework.Assert;
+
+public class BookBucket extends Base{
+	By ourPropertie = By.xpath("//li[@class='header__nav-item properties']//a[text()='Our Properties']");
+	By validateOurProperty = By.xpath("//h3[text()='Our Properties']");
+	By propertySearch  = By.xpath("(//div[@class='location__inner']//input[@name='location'])[3]");
+	By searchBtn    = By.xpath("//div[@class='form--actions']//button[@class='button button--secondary']");
+	By ourProperties= By.xpath("//h3[text()='Our Properties']");
+	By toggleButton = By.xpath("//button[@class='switch__button']");
+	By subTitleText = By.xpath("//h2[@class='search-map__venue-name']//a[text()='Blaydon primary care centre']");
+	By propertyNameClick =By.xpath("//h2[@class='search-map__venue-name']//a[text()='Blaydon primary care centre']");
+	By otherPropertiesCount = By.xpath("//ul[@class='nearby-venues__venues']");
+    By onePropertyClick = By.xpath("//ul[@class='nearby-venues__venues']");
+    By propertyDetailName = By.xpath("//h1[text()='Grindon Primary Care Centre']");
+	public void ourProperties()
+	{
+		driver.navigate().refresh();
+		WebElement oproperties = driver.findElement(ourPropertie);
+		Actions a = new Actions(driver);
+		a.moveToElement(oproperties).click().build().perform();
+		//oproperties.click();
+	}
+	@SuppressWarnings("deprecation")
+	public void validateOurPropertyText()
+	{
+		WebElement vProperties= driver.findElement(validateOurProperty);
+		String voProperties = vProperties.getText();
+		String expectedResult ="Our Properties";
+		Assert.assertEquals(expectedResult, voProperties);
+	}
+	public void propertySearchField()
+	{
+		WebElement psField = driver.findElement(propertySearch);
+		psField.sendKeys("Blaydon primary care centre");
+		
+	}
+	public void searchButton()
+	{
+		WebElement sButton = driver.findElement(searchBtn);
+		sButton.click();
+	}
+	@SuppressWarnings("deprecation")
+	public void ourPropertyText()
+	{
+		WebElement opText= driver.findElement(ourProperties);
+		String oText=opText.getText();
+		System.out.println(oText);
+		String expected="Our Properties";
+		Assert.assertEquals(expected, oText);
+	}
+	public void toggleButtonn()
+	{
+		WebElement tButton = driver.findElement(toggleButton);
+		Actions a=new Actions(driver);
+		a.moveToElement(tButton).click().build().perform();
+		System.out.println("Toggle button is working");
+	}
+	public void PropertySubTitleText()
+	{
+		WebElement stText = driver.findElement(subTitleText);
+		String sText = stText.getText();
+		System.out.println(sText);
+		String text="Blaydon primary care centre";
+		Assert.assertEquals(sText, text);
+	}
+	public void PropertyNameClicks()
+	{
+		WebElement pnClicks = driver.findElement(propertyNameClick);
+		pnClicks.click();
+	}
+	public void OtherPropertyImageCount() throws InterruptedException
+	{
+		int A=2;
+		Thread.sleep(3000);
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,300)","");
+		List<WebElement> opimageCount = driver.findElements(otherPropertiesCount);
+		for(int i=0;i<=opimageCount.size();i++)
+		{
+			A++;
+			
+		}
+		int actual=4;
+		System.out.println(A);
+		Assert.assertEquals(A, actual);
+	}
+	public void onePropertyLinkImage()
+	{
+		List<WebElement> opimageCount = driver.findElements(otherPropertiesCount);
+		for(int i=0;i<=opimageCount.size()-1;i++)
+		{
+		 String opText=opimageCount.get(i).getText();
+		 if(i==1)
+		 {
+			 opimageCount.get(i).click();
+			break;
+		 }
+			
+		}
+	}
+	public void PropertyDetailNameEvent()
+	{
+		WebElement pdNameText= driver.findElement(propertyDetailName);
+		String pdnText=pdNameText.getText();
+		System.out.println(pdnText);
+		String expected="Grindon Primary Care Centre";
+		Assert.assertEquals(expected, pdnText);
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookBucketRunner" project="NH5UpworkProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="testRunner.BookBucketRunner" time="17.322">
+    <testsuite name="Our properties page, other properties nearby widget and Properties calendar functionalities" time="17.322">
+      <testcase name="Verify Our property page and navigate through property calendar section on property details page to add the room to the booking widget" classname="Our properties page, other properties nearby widget and Properties calendar functionalities" time="17.322">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'ensures that List view displays with expected property and the subtitle' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Then("ensures that List view displays with expected property and the subtitle")
+public void ensures_that_list_view_displays_with_expected_property_and_the_subtitle() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("User scrolls down and ensure that {string} widget displays with up to {int} properties and the VIEW MORE link")
+public void user_scrolls_down_and_ensure_that_widget_displays_with_up_to_properties_and_the_view_more_link(String string, Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

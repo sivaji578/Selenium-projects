@@ -1,0 +1,11 @@
+package MultitenancyTest;
+
+import Multitenancy.GetDateAndTime;
+
+public class GetDateAndTimeTest extends GetDateAndTime{
+	public void getDateAndTimeTestMethod()
+	{
+		getDateTime();
+	}
+
+}

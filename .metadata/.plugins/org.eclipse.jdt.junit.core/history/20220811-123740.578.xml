@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookBucketRunner" project="NH5UpworkProject" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="testRunner.BookBucketRunner" time="50.852">
+    <testsuite name="Our properties page, other properties nearby widget and Properties calendar functionalities" time="50.852">
+      <testcase name="Verify Our property page and navigate through property calendar section on property details page to add the room to the booking widget" classname="Our properties page, other properties nearby widget and Properties calendar functionalities" time="50.852"/>
+    </testsuite>
+  </testsuite>
+</testrun>

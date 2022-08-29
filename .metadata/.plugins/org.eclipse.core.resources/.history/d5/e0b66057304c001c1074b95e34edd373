@@ -1,0 +1,14 @@
+package TestData.JobTrack360Maven;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class CreateNewProposal extends Basic {
+	By createnew=By.xpath("(//a[@class='dropdown-toggle'])[2]");
+	public void newData()
+	{
+		WebElement createnew1=driver.findElement(createnew);
+		
+	}
+
+}

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\WorksiteLabsAllProjects\WorkSiteLabs\AffitoRestAssuredProject\src\test\java\Resource\CommonUtilsClass.java"/>
+			<item value="C:\Users\softsuave\Downloads\AffituAPI"/>
+			<item value="C:\Users\softsuave\WorkSiteLabs\CucumberRestAssureProject\src\test\java\resources"/>
+			<item value="C:\Users\softsuave\WorkSiteLabs\CucumberRestAssureProject\pom.xml"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="CucumberSeleniumJavaProject"/>
+			<item value="firstPackage"/>
+			<item value="Pojo"/>
+			<item value="test"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="FirstPackage"/>
+			<item value="OneScenarioProject"/>
+			<item value="VirujhCucumberProject"/>
+			<item value="TESTPROJECT"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\softsuave\Downloads\selenium-cucumber-master"/>
+			<item value="C:\Users\softsuave\Downloads\profile"/>
+			<item value="C:\Users\softsuave\Downloads\BaseClassCreationTestNg"/>
+			<item value="C:\Users\softsuave\Downloads\AffituAPI\AffituAPI"/>
+			<item value="C:\Users\softsuave\Downloads\restassured-complete-basic-example-master"/>
+			<item value="C:\Users\softsuave\Downloads\DemoProject (3)\DemoProject"/>
+			<item value="C:\Users\softsuave\Downloads\Banfico_Assessment"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item key="width" value="480"/>
+		<item key="height" value="531"/>
+		<item key="x" value="560"/>
+		<item key="y" value="76"/>
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="DemoMavenRestAssured"/>
+			<item value="demorestPackage"/>
+			<item value="CucumberJobTrack360"/>
+			<item value="AssureProject"/>
+			<item value="RRRAssuredProject"/>
+			<item value="RestAssuredPackage"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="DemoMavenRestAssured"/>
+			<item value="DemoMavenRestAssuredProject"/>
+			<item value="CucumberJobTrack360"/>
+			<item value="AssureProject"/>
+			<item value="RRRAssuredProject"/>
+			<item value="RestAssured"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.EditDependencyDialog">
+		<item key="width" value="480"/>
+		<item key="height" value="450"/>
+		<item key="x" value="560"/>
+		<item key="y" value="130"/>
+	</section>
+	<section name="org.eclipse.m2e.editor.dialogs.ManageDependenciesDialog">
+		<item key="width" value="731"/>
+		<item key="height" value="450"/>
+		<item key="x" value="435"/>
+		<item key="y" value="130"/>
+	</section>
+</section>

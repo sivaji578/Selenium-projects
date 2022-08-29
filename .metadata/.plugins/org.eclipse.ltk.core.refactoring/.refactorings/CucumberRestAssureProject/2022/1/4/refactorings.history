@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;feature&apos; to &apos;features&apos;&#x0D;&#x0A;- Original project: &apos;CucumberRestAssureProject&apos;&#x0D;&#x0A;- Original element: &apos;CucumberRestAssureProject/src/test/java/feature&apos;&#x0D;&#x0A;- Renamed element: &apos;CucumberRestAssureProject/src/test/java/features&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;feature&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/test\/java&lt;feature" name="features" qualified="false" references="true" stamp="1642776415833" textual="false" version="1.0"/>
+</session>

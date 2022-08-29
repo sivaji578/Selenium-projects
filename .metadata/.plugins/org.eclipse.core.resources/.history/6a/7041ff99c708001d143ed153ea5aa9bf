@@ -1,0 +1,16 @@
+package testRunner;
+
+import org.junit.runner.RunWith;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features="NH5UpworkProject/src/test/java/features/ManageService.feature",
+glue={"stepDefinition"},monochrome=true)
+
+
+
+public class ManageServiceRunner {
+
+}

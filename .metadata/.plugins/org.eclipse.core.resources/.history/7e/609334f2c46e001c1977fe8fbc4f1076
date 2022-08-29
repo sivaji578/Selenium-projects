@@ -1,0 +1,35 @@
+package stepDefinition;
+    import cucumber.api.PendingException;
+	import cucumber.api.java.en.Given;
+	import cucumber.api.java.en.When;
+	import cucumber.api.java.en.Then;
+	import cucumber.api.java.en.And;
+	import cucumber.api.junit.Cucumber;
+	import org.junit.runner.RunWith;
+
+	@RunWith(Cucumber.class)
+	public class PropertyClass {
+
+	    @Given("^User click on new property button after completed the normal login procedure$")
+	    public void user_click_on_new_property_button_after_completed_the_normal_login_procedure() throws Throwable {
+	        throw new PendingException();
+	    }
+
+	    @When("^User enter all valide data on the fields$")
+	    public void user_enter_all_valide_data_on_the_fields() throws Throwable {
+	        throw new PendingException();
+	    }
+
+	    @Then("^User submit the all property values$")
+	    public void user_submit_the_all_property_values() throws Throwable {
+	        throw new PendingException();
+	    }
+
+	    @And("^User should be validate the property created status$")
+	    public void user_should_be_validate_the_property_created_status() throws Throwable {
+	        throw new PendingException();
+	    }
+
+	}
+
+}

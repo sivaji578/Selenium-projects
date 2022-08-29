@@ -1,0 +1,85 @@
+package BasicData;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ManageServiceFlow extends Base {
+	By myacount = By.xpath("//div[@class='dropdown']");
+	By Accounts = By.xpath("//div[@class='dropdown']//a[text()='Accounts']");
+	By AddNew   = By.xpath("(//button[text()='Add new'])[1]");
+	By servicetyp = By.xpath("//select[@id='serviceType']");
+	By service   = By.xpath("//div[@class='service__control css-yk16xz-control']");
+	By serviceIdentifier = By.xpath("//input[@placeholder='Service identifier']");
+	By iscommisionservcheckbox = By.xpath("//input[@data-testid='isCommissionedServiceCheckbox']");
+	By commisionddvalue   = By.xpath("//select[@id='serviceCommissioningBody']");
+	public void textMessage()
+	{
+		System.out.println("Sivaji");
+	}
+	
+	public void myaccount() throws InterruptedException
+	{
+		System.out.println("sivaji");
+		Actions a =new Actions(driver);
+		WebElement maccount = driver.findElement(myacount);
+		Thread.sleep(3000);
+		a.moveToElement(maccount).build().perform();
+		Thread.sleep(3000);
+		WebElement account = driver.findElement(Accounts);
+		account.click();
+	}
+	public void serviceAddNew() throws InterruptedException
+	{
+		Thread.sleep(4000);
+		WebElement addnew1 = driver.findElement(AddNew);
+		addnew1.click();
+	}
+	public void serviceType() throws InterruptedException
+	{
+		Select s = new Select(driver.findElement(servicetyp));
+		Thread.sleep(3000);
+		System.out.println("service type is working");
+		s.selectByVisibleText("Clinical");
+		Thread.sleep(3000);
+	}
+	public void services() throws InterruptedException
+	{
+		System.out.println("Service starting");
+		//Actions a =new Actions(driver);
+		Thread.sleep(4000);
+		WebElement service1 = driver.findElement(service);
+		//WebDriverWait wait= new WebDriverWait(driver,40);
+		//wait.until(ExpectedConditions.elementToBeClickable(services));
+		//JavascriptExecutor js=(JavascriptExecutor)driver;
+		//js.executeScript("arguments[0].click();", services);
+		service1.sendKeys("Addiction ser");
+		service1.sendKeys(Keys.ENTER);
+		
+	}
+	public void serviceIdentifierr()
+	{
+		WebElement sidentifier = driver.findElement(serviceIdentifier);
+		sidentifier.sendKeys("1234567890");
+	}
+	public void iscommisionedserviceCheckbox() throws InterruptedException
+	{
+		System.out.println("checkbox click action is working");
+		Thread.sleep(4000);
+		WebElement icservicecheckbox = driver.findElement(iscommisionservcheckbox);
+		Actions a =new Actions(driver);
+		a.moveToElement(icservicecheckbox).click().build().perform();
+		//icservicecheckbox.click();
+	}
+	public void commisionedDropdownValue()
+	{
+		Select s3 = new Select(driver.findElement(commisionddvalue));
+		s3.selectByVisibleText("West Lancashire CCG");
+	}
+}

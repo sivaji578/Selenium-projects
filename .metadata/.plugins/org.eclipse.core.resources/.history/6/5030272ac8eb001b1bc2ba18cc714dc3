@@ -1,0 +1,106 @@
+package Multitenancy;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class SignUpData extends Base{
+	By signup              = By.xpath("//div[text()='SIGN UP']");
+	By registerEmail       = By.xpath("//input[@name='email']");
+	By registerPassword    = By.xpath("//input[@name='password']");
+	By registerConfirmPsw  = By.xpath("//input[@name='confirmPassword']");
+	By continuebutton      = By.xpath("//button[text()='Continue']");
+	By majorFName          = By.xpath("//input[@name='firstName']");
+	By majorLName          = By.xpath("//input[@name='lastName']");
+	By majorDob            = By.xpath("(//input[@placeholder='MM/DD/YYYY'])[1]");
+	By minorCheckbox       = By.xpath("//input[@name='hasMinors']");
+	By minorFname          = By.xpath("//input[@name='minors.0.firstName']");
+	By minorLname          = By.xpath("//input[@name='minors.0.lastName']");
+	By minorDob            = By.xpath("(//input[@placeholder='MM/DD/YYYY'])[2]");
+	By relationship        = By.xpath("//input[@name='minors.0.relationship']");
+	By savecontinue        = By.xpath("//button[text()='Save & Continue']");
+	By phoneno             = By.xpath("//input[@name='phone']");
+	By phonenocheckbox     = By.xpath("//input[@type='checkbox']");
+	By phonenosavecontinue = By.xpath("//button[text()='Save & Continue']");
+	By streetadress        = By.xpath("//input[@name='address.address']");
+	By city                = By.xpath("//input[@name='address.city']");
+	By zipcode             = By.xpath("//input[@name='address.zipCode']");
+	By stateddown          = By.xpath("//div[@class=' css-tlfecz-indicatorContainer']");
+	By allstates           = By.xpath("//div[@class=' css-11unzgr']/*");
+	By addressavecontinue = By.xpath("//button[text()='Save & Continue']");
+	
+	
+	public void signUpDetails()
+	{
+		WebElement signup1      = driver.findElement(signup);
+		signup1.click();
+		WebElement enterEmail   = driver.findElement(registerEmail);
+		enterEmail.sendKeys("Aasi@worksitelabs.com");
+		WebElement enterPassword= driver.findElement(registerPassword);
+		enterPassword.sendKeys("Sivaji578@");
+		WebElement enterConfirmPsw = driver.findElement(registerConfirmPsw);
+		enterConfirmPsw.sendKeys("Sivaji578@");
+		WebElement continuee         = driver.findElement(continuebutton);
+		continuee.click();
+	}
+	public void majorMinorDobPage() throws InterruptedException
+	{
+		Thread.sleep(4000);
+		WebElement majorfirstname    = driver.findElement(majorFName);
+		majorfirstname.sendKeys("Shekhar");
+		WebElement majorlastname     = driver.findElement(majorLName);
+		majorlastname.sendKeys("Kasi");
+		Thread.sleep(4000);
+		WebElement majordateofbirth  = driver.findElement(majorDob);
+		majordateofbirth.click();
+		//Thread.sleep(3000);
+		majordateofbirth.sendKeys("12/14/2000");
+		WebElement minorcheckboxes   = driver.findElement(minorCheckbox);
+		minorcheckboxes.click();
+		WebElement minorfirstname    = driver.findElement(minorFname);
+		minorfirstname.sendKeys("Sivaji");
+		WebElement minorlastname     = driver.findElement(minorLname);
+		minorlastname.sendKeys("P");
+		WebElement minordateofbirth  = driver.findElement(minorDob);
+		minordateofbirth.sendKeys("12/10/2014");
+		WebElement minorrelationship = driver.findElement(relationship);
+		minorrelationship.sendKeys("Brother");
+		WebElement saveandcontinue   = driver.findElement(savecontinue);
+		saveandcontinue.click();
+	}
+	public void phoneNumberPage()
+	{
+		WebElement phonenumber       = driver.findElement(phoneno);
+		phonenumber.sendKeys("9490076668");
+		WebElement phonenumbercheckbox = driver.findElement(phonenocheckbox);
+		phonenumbercheckbox.click();
+		WebElement phonenumbersavecontinue = driver.findElement(phonenosavecontinue);
+		phonenumbersavecontinue.click();
+	}
+	public void addressPage()
+	{
+		WebElement streetaddress         = driver.findElement(streetadress);
+		streetaddress.sendKeys("Ntr street");
+		WebElement cityy                 = driver.findElement(city);
+		cityy.sendKeys("chennai");
+		
+		List<WebElement> allstatess       = driver.findElements(allstates);
+		for(int i=0;i<allstatess.size()-1;i++)
+		{
+			String allstatesss=allstatess.get(i).getText();
+			if(allstatesss.equalsIgnoreCase("California"))
+			{
+				allstatess.get(i).click();
+				
+			}
+			
+		}
+		WebElement zipcodee              = driver.findElement(zipcode);
+		zipcodee.sendKeys("90016");
+		WebElement savecontinue     = driver.findElement(addressavecontinue);
+		savecontinue.click();
+		
+	}
+
+}

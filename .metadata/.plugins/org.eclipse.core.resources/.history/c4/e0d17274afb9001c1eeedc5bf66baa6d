@@ -1,0 +1,46 @@
+package com.profile.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+
+import com.profile.base.Base;
+
+public class RecurringBooking extends Base {
+	//By findarooms=By.xpath("(//a[text()='Find rooms'])[2]");
+	@FindBy(how = How.XPATH, using = "(//a[text()='Find rooms'])[2]")
+	private WebElement FindARooms;
+	@FindBy(how = How.XPATH, using = "(//button[@data-testid='addToBookingButton'])[3]" )
+	private WebElement AddToBooking;
+	@FindBy(how = How.XPATH, using = "//input[@type='checkbox']")
+	private WebElement CheckBoxDisable;
+	@FindBy(how = How.XPATH, using = "//button[@data-testid='addToBasketButton']")
+	private WebElement AddToBucket;
+	
+	public void firstMethod() throws InterruptedException
+	{
+		//this.driver=driver;
+		Thread.sleep(3000);
+		FindARooms.click();
+		AddToBooking.click();
+		//CheckBoxDisable.isEnabled();
+		Boolean s = CheckBoxDisable.isEnabled();
+    	if(s) {
+    		System.out.println("Pass,Checkbox is disable");
+    	}else {
+    		System.out.println("Fail,Checkbox is not disabled");
+    	
+		}
+    	Boolean n=AddToBucket.isEnabled();
+    	if(n)
+    	{
+    		System.out.println("Pass,Button is disabled");
+    	}
+    	else {
+    		System.out.println("Fail,Button is notDisable");
+    	}
+		
+	}
+
+}

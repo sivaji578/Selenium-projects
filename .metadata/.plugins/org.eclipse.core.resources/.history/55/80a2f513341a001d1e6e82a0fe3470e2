@@ -1,0 +1,6 @@
+package BasicData;
+
+public class VerifyClinicAndNClinicFlow extends Base{
+	
+
+}

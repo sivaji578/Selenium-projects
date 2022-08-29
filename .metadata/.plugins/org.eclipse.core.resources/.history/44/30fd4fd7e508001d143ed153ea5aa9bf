@@ -1,0 +1,69 @@
+package BasicData;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class ManageServiceFlow extends Base {
+	By myacount = By.xpath("//div[@class='dropdown']");
+	By Accounts = By.xpath("//div[@class='dropdown']//a[text()='Accounts']");
+	By AddNew   = By.xpath("(//button[text()='Add new'])[1]");
+	By servicetyp = By.xpath("//div[@class=' css-2b097c-container']");
+	By service   = By.xpath("//div[@class='service__control css-yk16xz-control']");
+	By serviceIdentifier = By.xpath("//input[@placeholder='Service identifier']");
+	By iscommisionservcheckbox = By.xpath("//input[@id='isCommissionedService']");
+	By commisionddvalue   = By.xpath("//select[@id='serviceCommissioningBody']");
+	public void textMessage()
+	{
+		System.out.println("Sivaji");
+	}
+	
+	public void myaccount() throws InterruptedException
+	{
+		System.out.println("sivaji");
+		Actions a =new Actions(driver);
+		WebElement maccount = driver.findElement(myacount);
+		Thread.sleep(3000);
+		a.moveToElement(maccount).build().perform();
+		Thread.sleep(3000);
+		WebElement account = driver.findElement(Accounts);
+		account.click();
+	}
+	public void serviceAddNew() throws InterruptedException
+	{
+		Thread.sleep(4000);
+		WebElement addnew1 = driver.findElement(AddNew);
+		addnew1.click();
+	}
+	public void serviceType() throws InterruptedException
+	{
+		Select s = new Select(driver.findElement(servicetyp));
+		Thread.sleep(3000);
+		System.out.println("service type is working");
+		s.selectByVisibleText("Clinical");
+	}
+	public void services() throws InterruptedException
+	{
+		Select s1 = new Select(driver.findElement(service));
+		Thread.sleep(3000);
+		System.out.println("service is working");
+		s1.selectByVisibleText("Addiction services");
+	}
+	public void serviceIdentifierr()
+	{
+		WebElement sidentifier = driver.findElement(serviceIdentifier);
+		sidentifier.sendKeys("1234567890");
+	}
+	public void iscommisionedserviceCheckbox()
+	{
+		WebElement icservicecheckbox = driver.findElement(iscommisionservcheckbox);
+		icservicecheckbox.click();
+	}
+	public void commisionedDropdownValue()
+	{
+		Select s3 = new Select(driver.findElement(commisionddvalue));
+		s3.selectByVisibleText("West Lancashire CCG");
+	}
+}

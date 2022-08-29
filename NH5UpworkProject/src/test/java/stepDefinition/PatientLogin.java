@@ -1,0 +1,245 @@
+package stepDefinition;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.restassured.RestAssured;
+//import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+import static io.restassured.RestAssured.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import BasicData.Base;
+import BasicData.FirstFlow;
+import BasicData.PatientLoginCode;
+
+
+public class PatientLogin extends PatientLoginCode {
+	public static RequestSpecification request;
+	public static Response response;
+	String msg;
+	public static String token;
+	public static String patientIdNumber;
+	//public static String address;
+	public static String passcod;
+	public static WebDriver driver;
+	public static String url;
+	public static String urldata;
+	public static String patientId;
+	public static int k = 27;
+	
+	
+	//By titleValidation=By.xpath("//h1[@class='banner__heading']");
+FirstFlow f=new FirstFlow();
+PatientLoginCode rf =new PatientLoginCode();
+	@Given("^Enter the url data$")
+	
+    public void enter_the_url_data() throws Throwable {
+	 Base b=new Base();
+       b.Launch();
+    }
+
+    @When("^Enter the creadientials data on application$")
+    public void enter_the_creadientials_somethingsomething_data_on_application() throws Throwable {
+        System.out.print("Sivaji");
+    }
+
+    @Then("^Application should be open the home page$")
+    public void application_should_be_open_the_home_page() throws Throwable {
+    	 System.out.print("Sivaji");
+    }
+
+    @And("^Validate the Home page title here$")
+    public void validate_the_home_page_title_here() throws InterruptedException {
+    	 System.out.print("Sivaji");
+    	 /*WebElement title=driver.findElement(titleValidation);
+    	// Thread.sleep(3000);
+    	 String titleText=title.getText();
+    	 System.out.println("Testing"+titleText);
+    	 String exactText="Find and book clinical, group and workspace rooms";
+    	 Assert.assertEquals(exactText, titleText);*/
+    	 f.flow();
+    }
+    @Given("I select {string} on the homepage")
+    public void i_select_on_the_homepage(String strArg1) throws Throwable {
+       findaRoom();
+    }
+
+    @When("I select add to booking on the element in index 1")
+    public void i_select_add_to_booking_on_the_element_in_index_1() throws Throwable {
+    	addBooking();
+    }
+
+    @When("I select {string} from the {string} dropdown on the quickbook widget")
+    public void i_select_something_from_the_something_dropdown_on_the_quickbook_widget(String ser, String disa) throws Throwable {
+    	emergencyService(ser,disa);	
+    }
+
+    @When("I select day {string} of {string} from the datepicker on the quickbook widget")
+    public void i_select_day_something_of_something_from_the_datepicker_on_the_quickbook_widget(String strArg1, String strArg2) throws Throwable {
+    	k = selectDate(k);
+    	//startstime();
+    }
+  
+    @When("I select to {string} from the {string} dropdown on the quickbook widget")
+    public void i_select_to_something_from_the_something_dropdown_on_the_quickbook_widget(String strArg1, String strArg2) throws Throwable {
+    	
+    	startstime();
+    }
+    @And ("I add to select {string} from the {string} dropdown on the quickbook widget")
+    public void i_add_to_select_something_from_the_something_dropdown_on_the_quickbook_widget(String strArg1, String strArg2) throws Throwable {
+    	selectsHost();
+    	System.out.println("selectHost");
+    }
+
+
+    @Then("The add to basket button is enabled on the quickbook widget")
+    public void the_add_to_basket_button_is_enabled_on_the_quickbook_widget() throws Throwable {
+    	addBasket();
+    }
+
+    @And("I select {string} on the find rooms quick book widget")
+    public void i_select_something_on_the_find_rooms_quick_book_widget(String strArg1) throws Throwable {
+    	clickAddtoBasket();
+    }
+    @Then("I verify that {string} is visible on the quickbook widget")
+    public void i_verify_that_is_visible_on_the_quickbook_widget(String string) throws InterruptedException {
+    	
+    	validatesuccessMsg();
+    }
+    @And("I select b {string} on the find rooms quick book widget")
+    public void i_select_b_something_on_the_find_rooms_quick_book_widget(String strArg1) throws Throwable {
+    	continueshoppingbtn();  
+    }
+
+    @When("I select add to booking on the element in index 2")
+    public void i_select_add_to_booking_on_the_element_in_index_2() throws Throwable {
+    	addBooking(); 
+    }
+
+    @When("I add select {string} from the {string} dropdown on the quickbook widget")
+    public void i_select_add_something_from_the_something_dropdown_on_the_quickbook_widget(String Ser, String disa) throws Throwable {
+    	emergencyService(Ser,disa);
+    }
+   // @And("^I select a \"([^\"]*)\" on the find rooms quick book widget$")
+    //public void i_select_a_something_on_the_find_rooms_quick_book_widget(String strArg1) throws Throwable {
+        
+   // }
+
+    @When("I select a day {string} of {string} from the datepicker on the quickbook widget")
+    public void i_select_a_day_something_of_something_from_the_datepicker_on_the_quickbook_widget(String date, String nextMonth) throws Throwable {
+    	//Thread.sleep(4000);
+    	k = selectDate(k);
+    	startstime();
+    }
+    @And("I choose the first available slot")
+    public void i_choose_the_first_available_slot() throws Throwable {
+    	//firstavilableslot();
+        System.out.println("it is taking defaultly the slot");
+    }
+   
+
+    @And("I select the {string} from the {string} dropdown on the quickbook widget")
+    public void i_select_the_something_from_the_something_dropdown_on_the_quickbook_widget(String strArg1, String strArg2) throws Throwable {
+    	selectsHost();
+    }
+    @Then("^add to basket button is enabled on the quickbook widget$")
+    public void add_to_basket_button_is_enabled_on_the_quickbook_widget() throws Throwable {
+    	addBasket();
+    }
+
+  
+    @And("I select to {string} on the find rooms quick book widget")
+    public void i_select_to_something_on_the_find_rooms_quick_book_widget(String strArg1) throws Throwable {
+    	clickAddtoBasket(); 
+    }
+    @Then("^I got that \"([^\"]*)\" is visible on the quickbook widget$")
+    public void i_got_that_something_is_visible_on_the_quickbook_widget(String strArg1) throws Throwable {
+    	validatesuccessMsg();  
+    }
+   // @Then("I verify that {string} is visible on the quickbook widget")
+    //public void i_verify_that_something_is_visible_on_the_quickbook_widget(String strArg1) throws Throwable {
+    //	validatesuccessMsg();
+    //}
+    @And("I select a {string} on the find rooms quick book widget")
+    public void i_select_a_something_on_the_find_rooms_quick_book_widget(String strArg1) throws Throwable {
+    	checkout();
+    }
+    @And("There are 2 {string} on the basket page")
+    public void there_are_2_something_on_the_basket_page(String strArg1) throws Throwable {
+    	Thread.sleep(3000);
+    	basketvalues();
+    }
+    
+    @Then("I verify that {string} is not visible on the basket page")
+    public void i_verify_that_something_is_not_visible_on_the_basket_page(String strArg1) throws Throwable {
+        System.out.println("error text is checking");
+        basketpageerrortext();
+    }
+    @And("I select {string} on the basket page")
+    public void i_select_something_on_the_basket_page(String strArg1) throws Throwable {
+      paybookingfulldropdown(); 
+    }
+
+    @And("I select a {string} on the basket page")
+    public void i_select_a_something_on_the_basket_page(String strArg1) throws Throwable {
+       System.out.println("this is not available in application");
+        checkboxtermscondition();
+    }
+
+    @And("I select b {string} on the basket page")
+    public void i_select_b_something_on_the_basket_page(String strArg1) throws Throwable {
+     System.out.println("Pay booking in full");
+        paynowMethod();
+    }
+    @Then("The element {string} contains the text {string} on the basket page")
+    public void the_element_something_contains_the_text_something_on_the_basket_page(String strArg1, String strArg2) throws Throwable {
+        System.out.println("Pay booking is fully done");
+    }
+}
+    /*  @And("I select {string} on the basket page")
+    public void i_select_something_on_the_basket_page(String strArg1) throws Throwable {
+    	paybookingfulldropdown();  
+    }
+
+//////////////////////////////////
+    @Then("I verify that {string} is not visible on the basket page")
+    public void i_verify_that_something_is_not_visible_on_the_basket_page(String strArg1) throws Throwable {
+        System.out.println("this is not available in application");
+        checkboxtermscondition();
+    }*/
+
+   
+
+
+    
+
+
+
+
+    //@And("^I select \"([^\"]*)\" from the \"([^\"]*)\" dropdown on the quickbook widget$")
+   // public void i_select_something_from_the_something_dropdown_on_the_quickbook_widget(String strArg1, String strArg2) throws Throwable {
+    
+
+
+
+	
+
+
+
+

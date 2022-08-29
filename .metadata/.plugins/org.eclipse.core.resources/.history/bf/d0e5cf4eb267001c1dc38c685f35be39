@@ -1,0 +1,19 @@
+package RestPackage.RestProject;
+
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+
+import org.testng.annotations.Test;
+
+@Test
+public class FirstClass {
+	public void firstMethod()
+	{
+		String data=RestAssured.baseURI="https://dev.virujh.com/api/calendar/patient/report/list?paginationStart=0&paginationLimit=10";
+		given().log().all().queryParam("paginationStart","0","paginationLimit","10").header("accept", "*/*", "Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZSI6Ijk4NzQ1NjMyMTAiLCJwYXRpZW50SWQiOjc4LCJwZXJtaXNzaW9uIjoiQ1VTVE9NRVIiLCJyb2xlIjpbIlBBVElFTlQiXSwidGltZVpvbmUiOiIrMDU6MzAiLCJpYXQiOjE2NDA2NzQ5MTMsImV4cCI6MTY3NjY3NDkxM30.bnnW_A0RfGOzzyiuTPUbh87IoZcGpPvN6X93klF0j3g")
+		.extract().response().asString();
+		System.out.println("this is working");
+	}
+
+}

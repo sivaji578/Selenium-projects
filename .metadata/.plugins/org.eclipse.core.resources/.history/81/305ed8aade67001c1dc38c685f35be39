@@ -1,0 +1,12 @@
+package RestPackage.RestProject;
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+
+public class DummyClass {
+	public static void firstDummy()
+	{
+		RestAssured.baseURI("https://dev.virujh.com/api/calendar/patient/appointmentSlotsViewWithoutLogin");
+	}
+
+}

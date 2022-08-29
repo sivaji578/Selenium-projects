@@ -1,0 +1,123 @@
+package stepDefinition;
+
+import BasicData.Base;
+import BasicData.FirstFlow;
+import BasicData.ManageServiceFlow;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class ManageService extends ManageServiceFlow {
+	public static int i=1;
+	public static int j=1;
+	Base a = new Base();
+	ManageServiceFlow m = new ManageServiceFlow();
+    FirstFlow f = new FirstFlow();
+	 @Given("I navigate to the open space homepage")
+	    public void i_navigate_to_the_open_space_homepage() throws Throwable {
+		 System.out.println("fIrststep");
+	        a.Launch();
+	        System.out.println("test start");
+	        Thread.sleep(4000);
+	    }
+//	 @Then("I select {string} on the homepage")
+//	    public void i_select_something_on_the_homepage(String strArg1) throws Throwable {
+//	    	m.textMessage();
+//	    }
+
+	    @Then("I type {string} in the {string} field on the sign in page")
+	    public void i_type_something_in_the_something_field_on_the_sign_in_page(String strArg1, String strArg2) throws Throwable {
+	    	m.textMessage();
+	    }
+
+	    @And("I select {string} on the sign in page")
+	    public void i_select_something_on_the_sign_in_page(String strArg1) throws Throwable {
+	    	m.textMessage();
+	    }
+	    @And("I select {string} on My Account on the homepage")
+	    public void i_select_something_on_my_account_on_the_homepage(String strArg1) throws Throwable {
+	        m.myaccount();
+	    }
+	    @And("I select {string} on the services widget")
+	    public void i_select_something_on_the_services_widget(String strArg1) throws Throwable {
+	     m.serviceAddNew();
+	    }
+	    @Then("The {string} element has {string} text on the services widget")
+	    public void the_something_element_has_something_text_on_the_services_widget(String strArg1, String strArg2) throws Throwable {
+	    	requestNewService();
+	    }
+	    @When("I select {string} from the {string} dropdown on the services widget")
+	    public void i_select_something_services_widget_serviceType_First(String strArg1, String strArg2) throws Throwable {
+	       j=serviceType(j);
+	    }
+
+	    @And("I select a {string} from the {string} dropdown on the services widget")
+	    public void i_select_a_something_from_the_something_dropdown_on_the_services_widget(String strArg1, String strArg2) throws Throwable {
+	     i=services(i);
+	   // m.textMessage();
+	    }
+	    @And("I type {string} in the {string} field on the services widget")
+	    public void i_type_something_in_the_field_on_the_services_widget_type_serviceIdentifier(String strArg1, String strArg2) throws Throwable {
+	        m.serviceIdentifierr();
+	    }
+	    @And("I select a {string} on the services widget")
+	    public void i_select_a_services_widget(String strArg1) throws Throwable {
+	       m.iscommisionedserviceCheckbox();
+	    }
+
+	    @And("I select b {string} from the {string} dropdown on the services widget")
+	    public void i_select_b_something_from_the_something_dropdown_on_the_services_widget(String strArg1, String strArg2) throws Throwable {
+	        m.commisionedDropdownValue();
+	    }
+	    @And("I select to {string} on the services widget")
+	    public void i_select_on_the_services_widget_licensedCheckbox(String strArg1) throws Throwable {
+	        m.licensedCheckbox();
+	    }
+	    @And("I type b {string} in the {string} field on the services widget")
+	    public void i_field_on_the_services_widget(String strArg1, String strArg2) throws Throwable {
+	       m.licensedbodyfield();
+	    }
+
+	    @And("I type a {string} in the {string} field on the services widget")
+	    public void i_type_a_something_in_the_something_field_on_the_services_widget(String strArg1, String strArg2) throws Throwable {
+	       m.registrationNumber();
+	    }
+	    @When("I select c {string} on the services widget")
+	    public void i_select_services_widget(String strArg1) throws Throwable {
+	     m.addAnotherServiceButton(); 
+	    }
+	    @When("I select {string} from the {string} dropdown on the services widget")
+	    public void i_select_on_the_services_widget(String strArg1, String strArg2) throws Throwable {
+	    m.serviceType(j);
+	    }
+	    @And("I select the {string} from the {string} dropdown on the services widget")
+	    public void i_select_the_dropdown_on_the_services_widget(String strArg1, String strArg2) throws Throwable {
+	       m.services(i);
+	    }
+
+	    @And("I type {string} in the {string} field on the services widget")
+	    public void i_type_the_services_widget_element(String strArg1, String strArg2) throws Throwable {
+	        m.serviceIdentifierr();
+	    }
+	    @When("I select s {string} on the services widget")
+	    public void i_select_s_something_on_the_services_widget(String strArg1) throws Throwable {
+	    	submitForApproval();
+	    }
+	    @Then("The s {string} element has {string} text on the services widget")
+	    public void the_s_something_element_has_something_text_on_the_services_widget(String strArg1, String strArg2) throws Throwable {
+	     m.textMessage();
+	    }
+
+	    @Then("The n {string} element has {string} text on the services widget")
+	    public void the_n_something_element_has_something_text_on_the_services_widget(String strArg1, String strArg2) throws Throwable {
+	     m.textMessage();
+	    }
+
+
+
+
+
+
+
+}

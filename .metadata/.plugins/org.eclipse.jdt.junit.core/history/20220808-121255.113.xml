@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookBucketRunner" project="NH5UpworkProject" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="testRunner.BookBucketRunner" time="27.945">
+    <testsuite name="Our properties page, other properties nearby widget and Properties calendar functionalities" time="27.945">
+      <testcase name="Verify Our property page and navigate through property calendar section on property details page to add the room to the booking widget" classname="Our properties page, other properties nearby widget and Properties calendar functionalities" time="27.945">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'User scrolls down and ensure that "Other property nearby" widget displays with up to 4 properties and the VIEW MORE link' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("User scrolls down and ensure that {string} widget displays with up to {int} properties and the VIEW MORE link")
+public void user_scrolls_down_and_ensure_that_widget_displays_with_up_to_properties_and_the_view_more_link(String string, Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

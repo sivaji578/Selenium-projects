@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ManageServiceRunner" project="NH5UpworkProject" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="testRunner.ManageServiceRunner" time="97.407">
+    <testsuite name="Manage services" time="97.407">
+      <testcase name="Verify Add New Services &amp; delete service" classname="Manage services" time="97.407"/>
+    </testsuite>
+  </testsuite>
+</testrun>

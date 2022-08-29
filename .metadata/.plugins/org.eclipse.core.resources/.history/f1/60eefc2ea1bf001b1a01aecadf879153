@@ -1,0 +1,79 @@
+package WorkSiteLabs.WSL;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class Reports_Admin extends Base{
+	By allreportt  = By.xpath("html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div/button");
+	By datclick   = By.xpath("//div[@class='ant-picker ant-picker-focused']");
+	By alldatess  = By.xpath("//tbody/tr/td/div");
+	 
+	  
+	  //Select on DayWiseAppointment 
+	public void reportsdmin() throws InterruptedException { 
+	  List<WebElement> options=driver.findElements(By.xpath("html/body/div[2]/div[3]/div[2]/ul/a/div/div")); 
+	  for (int i = 0; i <=options.size(); i++) 
+	  { 
+		  if(options.get(i).getText().equalsIgnoreCase("report")) 
+		  {
+	        options.get(i).click(); 
+	        break; 
+	        } 
+		  
+	  }
+	 
+	  
+	  List<WebElement> result=driver.findElements(allreportt);
+	  System.out.println(result.size());
+	  for(int i=0;i<=result.size();i++)
+	  {
+		  System.out.println("inside");
+	      System.out.println("text"+result.get(i).getText());
+	       result.get(i).click();
+	       Thread.sleep(20000);
+	      if(result.get(i).getText().equalsIgnoreCase("Country report")) 
+	      {
+	    	  System.out.println("country report showing");
+		  result.get(i).click(); 
+		  Thread.sleep(9000); 
+		  driver.navigate().back();
+		  Thread.sleep(3000);
+		  driver.switchTo().defaultContent();
+		  } 
+	      else if(result.get(i).getText().equalsIgnoreCase("weekly report")) 
+	      {
+	    	  System.out.println("Weekly report showing");
+		  result.get(i).click(); Thread.sleep(3000); 
+		  } 
+	      else if(result.get(i).getText().equalsIgnoreCase("Consolidation report")) 
+	      {
+	    	  System.out.println("Consolidation report showing");
+		  result.get(i).click(); Thread.sleep(3000); 
+		  }
+		 
+	  }
+	  waitForElement(datclick);
+	  WebElement dateclick   = driver.findElement(datclick);
+	  dateclick.click();
+	  WebElement dateclick1   = driver.findElement(datclick);
+	  dateclick1.click();
+	  List <WebElement> aldates  =driver.findElements(alldatess);
+	  for(int i=0;i<=aldates.size()-1;i++)
+	  {
+		  String alldatees =aldates.get(i).getText();
+		  System.out.println(alldatees);
+		  if(alldatees.equals(21))
+		  {
+			  aldates.get(i).click();
+			  break;
+		  }
+	  }
+	  
+}
+}
+
+
+
+

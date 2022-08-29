@@ -1,0 +1,130 @@
+package WorkSiteLabs.WSL;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class BookAppoinmentNow extends Base
+{
+	By BookAppoinmentN      = By.xpath("//button[text()='Book Appointment Now']");
+	By PhoneNo              = By.xpath("//input[@name='phone']");
+	By Checkbx              = By.xpath("//input[@name='sendMessagesAboutTestResults']");
+	By Savecontinue0        = By.xpath("//button[text()='Save & Continue']");
+	By Email                = By.xpath("//input[@name='email']");
+	By Confirmemail         = By.xpath("//input[@name='confirmEmail']");
+	By Savecontinue         = By.xpath("//button[text()='Save & Continue']");
+	By Selectalllocation    = By.xpath("//div[@class='sc-gSYCTC fkCSEE']/button");
+	By Majorcheckbox        = By.xpath("//input[@name='haCustomer']");
+	By Firstnam             = By.xpath("//input[@name='firstName']");
+	By Lastnam              = By.xpath("//input[@name='lastName']");
+	By Datebirth            = By.xpath("//input[@placeholder='MM/DD/YYYY']");
+	By Minorcheckbox        = By.xpath("//input[@name='hasMinors']");
+	By MFirstnam            = By.xpath("//input[@name='minors.0.firstName']");
+	By MLastnam             = By.xpath("//input[@name='minors.0.lastName']");
+	By Datebirth2           = By.xpath("(//input[@placeholder='MM/DD/YYYY'])[2]");
+	By Relatship            = By.xpath("//input[@name='minors.0.relationship']");
+	By Savecontinue1        = By.xpath("//button[text()='Save & Continue']");
+	By Streetadres          = By.xpath("//input[@name='address.address']");
+	By Cty                  = By.xpath("//input[@name='address.city']");
+	By Stateslct            = By.xpath("//div[@class=' css-1wa3eu0-placeholder']");
+	//By Dropdown             = By.xpath("")
+	By Zipcde		        = By.xpath("//input[@name='address.zipCode']");
+	By Flightdeparture      = By.xpath("//input[@class='sc-gXfWUo dfGyKR']");
+	By Calendr              = By.xpath("(//div[@class='react-datepicker__month'])[1]/div/div");
+	
+	//Click BookAppoinment Now option
+	public void bookAppoinmentNow()
+	{
+		WebElement ban      = driver.findElement(BookAppoinmentN);
+		ban.click();
+	}
+	//Click phone number option after enter the phone number
+	public void phoneNumber()
+	{
+		WebElement pn       = driver.findElement(PhoneNo);
+		pn.sendKeys("9490076668");
+	}
+	//Select Check box
+	public void checkBox()
+	{
+		WebElement cb       = driver.findElement(Checkbx);
+		cb.click();
+	}
+	public void savecontinue()
+	{
+		WebElement ssc      =driver.findElement(Savecontinue0);
+		ssc.click();
+	}
+	//Enter Email
+	public void email()
+	{
+		WebElement emaill   = driver.findElement(Email);
+		emaill.click();
+		emaill.sendKeys("skasi@worksitelabs.com");
+		WebElement conformemail= driver.findElement(Confirmemail);
+		conformemail.click();
+		conformemail.sendKeys("skasi@worksitelabs.com");
+	}
+	public void saveContinueOption()
+	{
+		WebElement sc        = driver.findElement(Savecontinue);
+		sc.click();
+	}
+	//So many covid reporting centers there,now selecting one center,Click save&continue option also
+	public void selectLocation()
+	{
+		WebDriverWait wait = new WebDriverWait(driver,99);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Selectalllocation));
+		
+		List<WebElement> sl  = driver.findElements(Selectalllocation);
+		for (WebElement chooseLocation : sl) {
+			if(chooseLocation.getText().equals("San Diego"))
+			{
+				chooseLocation.click();
+			}
+			
+		}
+//		WebElement sc1       = driver.findElement(Savecontinue);
+//        sc1.click();		
+	}
+	//Registered all major person details
+	public void majorDetails()
+	{
+		WebElement mcb        =driver.findElement(Majorcheckbox);
+		mcb.click();
+		WebElement fn1        =driver.findElement(Firstnam);
+		fn1.sendKeys("Shekhar");
+		WebElement ln1        =driver.findElement(Lastnam);
+		ln1.sendKeys("kamula");
+		WebElement dob        =driver.findElement(Datebirth);
+		dob.click();
+		dob.sendKeys("12/05/1997");
+		
+	}
+	public void minorDetails()
+	{
+		WebElement micb        =driver.findElement(Minorcheckbox);
+		micb.click();
+		WebElement fn2         =driver.findElement(MFirstnam);
+		fn2.sendKeys("Shanu");
+		WebElement ln2         =driver.findElement(MLastnam);
+		ln2.sendKeys("s");
+		WebElement dob1        =driver.findElement(Calendr);
+		dob1.click();
+		dob1.sendKeys("05-05-2021");
+		WebElement relationship=driver.findElement(Relatship);
+		relationship.sendKeys("son");
+		WebElement sc1         =driver.findElement(Savecontinue1);
+		sc1.click();
+		
+	
+		
+		
+		
+	}
+	
+
+}
